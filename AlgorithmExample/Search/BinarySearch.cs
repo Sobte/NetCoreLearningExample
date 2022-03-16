@@ -119,6 +119,8 @@ namespace AlgorithmExample.Search
             where T : IComparable
         {
             var mid = low + (high - low) / 2;
+            if (mid < 0 || mid >= collection.Count)
+                return -1;
             var guess = collection[mid];
             var compareResult = guess.CompareTo(searchValue);
             if (compareResult == 0)
